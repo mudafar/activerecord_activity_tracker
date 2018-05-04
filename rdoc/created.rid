@@ -1,0 +1,9 @@
+Fri, 04 May 2018 11:46:15 -0400
+README.md	Fri, 04 May 2018 11:44:35 -0400
+lib/activerecord_activity_tracker.rb	Thu, 03 May 2018 14:21:27 -0400
+lib/activerecord_activity_tracker/acts_as_trackable.rb	Thu, 03 May 2018 14:25:27 -0400
+lib/activerecord_activity_tracker/current_owner.rb	Thu, 03 May 2018 14:21:27 -0400
+lib/activerecord_activity_tracker/owner.rb	Thu, 03 May 2018 14:23:47 -0400
+lib/activerecord_activity_tracker/version.rb	Wed, 02 May 2018 16:24:12 -0400
+lib/generators/activerecord_activity_tracker.rb	Wed, 02 May 2018 17:08:12 -0400
+lib/generators/activerecord_activity_tracker/install/install_generator.rb	Thu, 03 May 2018 14:30:42 -0400

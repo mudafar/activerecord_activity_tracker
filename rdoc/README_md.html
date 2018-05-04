@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - ActiverecordActivityTracker</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-ActiverecordActivityTracker">ActiverecordActivityTracker</a>
+    <li><a href="#label-Features">Features</a>
+    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Track+a+model">Track a model</a>
+    <li><a href="#label-Set+default+owner+-28user-29">Set default owner (user)</a>
+    <li><a href="#label-Access+model-27s+tracked+activities">Access model&#39;s tracked activities</a>
+    <li><a href="#label-Examples">Examples</a>
+    <li><a href="#label-Track+comment-27s+creation">Track comment&#39;s creation</a>
+    <li><a href="#label-Track+comment-27s+creation+and+modification">Track comment&#39;s creation and modification</a>
+    <li><a href="#label-Track+comment-27s+custom+event+-28title-27s+change-29">Track comment&#39;s custom event (title&#39;s change)</a>
+    <li><a href="#label-Set+default+owner+to+devise+current_user">Set default owner to devise current_user</a>
+    <li><a href="#label-Access+comment-27s+activities">Access comment&#39;s activities</a>
+    <li><a href="#label-Installation">Installation</a>
+    <li><a href="#label-Setup">Setup</a>
+    <li><a href="#label-Documentation+-2F+API">Documentation / API</a>
+    <li><a href="#label-ActiverecordActivityTracker-3A-3AActsAsTrackable">ActiverecordActivityTracker::ActsAsTrackable</a>
+    <li><a href="#label-ActiverecordActivityTracker-3A-3AOwner">ActiverecordActivityTracker::Owner</a>
+    <li><a href="#label-ArActivityTracker">ArActivityTracker</a>
+    <li><a href="#label-Description">Description</a>
+    <li><a href="#label-Data+structure">Data structure</a>
+    <li><a href="#label-Key+default+format">Key default format</a>
+    <li><a href="#label-Contributing">Contributing</a>
+    <li><a href="#label-License">License</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./README_md.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h1 id="label-ActiverecordActivityTracker"><a href="ActiverecordActivityTracker.html">ActiverecordActivityTracker</a><span><a href="#label-ActiverecordActivityTracker">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><code>activerecord_activity_tracker</code> provides simple yet powerful
+activity tracker for your Rails <strong>ActiveRecord</strong> models.</p>
+
+<p>This gem will allows you to create the data model for social <strong>news
+feed</strong> used in many modern platform in no time.</p>
+
+<p><code>Note:</code> This is an abstract gem, thus there are no views or
+controllers provided.</p>
+
+<h3 id="label-Features">Features<span><a href="#label-Features">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Track model&#39;s creation and/or updating activities.</p>
+</li><li>
+<p>Track any custom activity&#39;s event easily.</p>
+</li><li>
+<p>Add optional data to any custom activity.</p>
+</li><li>
+<p>Set owner once, and use it in all tracked models seamlessly.</p>
+</li></ul>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Track+a+model">Track a model<span><a href="#label-Track+a+model">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Include <code>ActiverecordActivityTracker::ActsAsTrackable</code></p>
+</li><li>
+<p>For automatic tracking add <code>acts_as_trackable</code></p>
+</li><li>
+<p>For custom event use <code>create_ar_activity</code></p>
+</li></ul>
+
+<h3 id="label-Set+default+owner+-28user-29">Set default owner (user)<span><a href="#label-Set+default+owner+-28user-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Include <code>ActiverecordActivityTracker::Owner</code></p>
+</li><li>
+<p>To set the owner use <code>set_owner(current_user)</code></p>
+</li><li>
+<p>To get the owner use <code>get_owner</code></p>
+</li><li>
+<p>To clear owner use <code>clear_owner</code></p>
+</li></ul>
+
+<p><code>Note:</code> setting the owner is required, as each activity must
+have an owner, see <a href="#set-default-owner-to-devise-current_user">set
+default owner example</a></p>
+
+<h3 id="label-Access+model-27s+tracked+activities">Access model&#39;s tracked activities<span><a href="#label-Access+model-27s+tracked+activities">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Include <code>ActiverecordActivityTracker::ActsAsTrackable</code></p>
+</li><li>
+<p>Use <code>ar_activities</code></p>
+</li></ul>
+
+<h3 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-Track+comment-27s+creation">Track comment&#39;s creation<span><a href="#label-Track+comment-27s+creation">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment"># app/models/comment.rb</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Comment</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationRecord</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">ActiverecordActivityTracker</span><span class="ruby-operator">::</span><span class="ruby-constant">ActsAsTrackable</span>
+
+  <span class="ruby-identifier">acts_as_trackable</span> [:<span class="ruby-identifier">create</span>]
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-Track+comment-27s+creation+and+modification">Track comment&#39;s creation and modification<span><a href="#label-Track+comment-27s+creation+and+modification">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment"># app/models/comment.rb</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Comment</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationRecord</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">ActiverecordActivityTracker</span><span class="ruby-operator">::</span><span class="ruby-constant">ActsAsTrackable</span>
+
+  <span class="ruby-identifier">acts_as_trackable</span> [:<span class="ruby-identifier">create</span>, :<span class="ruby-identifier">update</span>]
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-Track+comment-27s+custom+event+-28title-27s+change-29">Track comment&#39;s custom event (title&#39;s change)<span><a href="#label-Track+comment-27s+custom+event+-28title-27s+change-29">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-comment"># app/models/comment.rb</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Comment</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationRecord</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">ActiverecordActivityTracker</span><span class="ruby-operator">::</span><span class="ruby-constant">ActsAsTrackable</span>
+
+  <span class="ruby-identifier">after_update</span> :<span class="ruby-identifier">add_title_change_activity</span>
+    
+  <span class="ruby-identifier">private</span>
+    
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">add_title_change_activity</span>
+    <span class="ruby-identifier">create_ar_activity</span>(<span class="ruby-identifier">key</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;comment.title.change&#39;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">saved_change_to_title?</span>
+  <span class="ruby-keyword">end</span>
+    
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-Set+default+owner+to+devise+current_user">Set default owner to devise current_user<span><a href="#label-Set+default+owner+to+devise+current_user">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p><code>Note:</code> owner is a polymorphic relation, thus any model can be
+used, not just user.</p>
+
+<pre class="ruby"><span class="ruby-comment"># app/controllers/application_controller.rb</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">ApplicationController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">ActiverecordActivityTracker</span><span class="ruby-operator">::</span><span class="ruby-constant">Owner</span>
+
+  <span class="ruby-identifier">protect_from_forgery</span> <span class="ruby-identifier">with</span><span class="ruby-operator">:</span> :<span class="ruby-identifier">exception</span>
+
+  <span class="ruby-identifier">around_action</span> :<span class="ruby-identifier">set_ar_activity_owner</span>
+
+
+  <span class="ruby-identifier">private</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_ar_activity_owner</span>
+    <span class="ruby-identifier">set_owner</span> <span class="ruby-identifier">current_user</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">clear_owner</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="label-Access+comment-27s+activities">Access comment&#39;s activities<span><a href="#label-Access+comment-27s+activities">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre>&lt;!-- app/views/comments/show.erb --&gt;
+  &lt;% @comment.ar_activities.each do |activity| %&gt;
+      &lt;%= activity.key %&gt;
+      &lt;br&gt;
+  &lt;% end %&gt;</pre>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Add this line to your application&#39;s Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;activerecord_activity_tracker&#39;</span>
+</pre>
+
+<p>And then execute: <code>bash $ bundle </code></p>
+
+<p>Or install it yourself as: <code>bash $ gem install
+activerecord_activity_tracker </code></p>
+
+<h3 id="label-Setup">Setup<span><a href="#label-Setup">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Execute this line in your application&#39;s directory: <code>bash $ rails
+generate activerecord_activity_tracker:install </code></p>
+
+<p>And then execute: <code>bash $ rails db:migrate </code></p>
+
+<h3 id="label-Documentation+-2F+API">Documentation / API<span><a href="#label-Documentation+-2F+API">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<h4 id="label-ActiverecordActivityTracker-3A-3AActsAsTrackable"><a href="ActiverecordActivityTracker/ActsAsTrackable.html">ActiverecordActivityTracker::ActsAsTrackable</a><span><a href="#label-ActiverecordActivityTracker-3A-3AActsAsTrackable">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><code>acts_as_trackable(tracked = [:create, :update]) =&gt; nil</code>
+Overview: Track model automatically.</p>
+
+<p>Parameters: tracked (array) (defaults to: [:create, :update]) -- instance
+options to set the tracked events.</p>
+</li><li>
+<p><code>create_ar_activity(options = {}) =&gt; nil</code> Overview: Create
+custom activity, prevent duplication.</p>
+
+<p>Options: - key (string) (defaults to: "#{model_name.param_key}.create"). -
+owner (active_record_relation) (defaults to: get_owner). - data (string)
+(defaults to: nil).</p>
+
+<p>Parameters: -- options (hash) (defaults to: {}) -- instance options to set
+custom params.</p>
+</li><li>
+<p><code>create_ar_activity!(options = {}) =&gt; nil</code> Overview: Similar
+to <code>create_ar_activity</code> but allows duplication.</p>
+</li><li>
+<p><code>has_many :ar_activities, as: :trackable, dependent: :destroy</code>
+Overview: Handle activities&#39; relations.</p>
+</li></ul>
+
+<h4 id="label-ActiverecordActivityTracker-3A-3AOwner"><a href="ActiverecordActivityTracker/Owner.html">ActiverecordActivityTracker::Owner</a><span><a href="#label-ActiverecordActivityTracker-3A-3AOwner">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<ul><li>
+<p><code>get_owner() =&gt; owner (active_record_model or nil)</code> Overview:
+Get the current owner</p>
+</li><li>
+<p><code>set_owner(owner) =&gt; nil</code> Overview: Set the current owner.</p>
+
+<p>Parameters: owner (active_record_model) -- instance active record model to
+set current owner.</p>
+</li><li>
+<p><code>clear_owner =&gt; nil</code> Overview: Set the current owner to nil.</p>
+</li></ul>
+
+<h4 id="label-ArActivityTracker">ArActivityTracker<span><a href="#label-ArActivityTracker">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<h5 id="label-Description">Description<span><a href="#label-Description">&para;</a> <a href="#top">&uarr;</a></span></h5>
+
+<p>Activity model, to handle trackable and owner relations.</p>
+
+<h5 id="label-Data+structure">Data structure<span><a href="#label-Data+structure">&para;</a> <a href="#top">&uarr;</a></span></h5>
+
+<p><code>t.string &quot;trackable_type&quot;      t.integer
+&quot;trackable_id&quot;      t.string &quot;owner_type&quot;     
+t.integer &quot;owner_id&quot;      t.string &quot;key&quot;      t.string
+&quot;data&quot; </code></p>
+
+<h5 id="label-Key+default+format">Key default format<span><a href="#label-Key+default+format">&para;</a> <a href="#top">&uarr;</a></span></h5>
+
+<p>MODEL_NAME.ACTIVITY_TYPE</p>
+
+<p><strong>For example:</strong> Given a <code>tracked</code> comment model
+<code>Comment</code>, then the keys (by default) will be:
+<code>comment.create</code> and <code>comment.update</code> for creation
+and modification activities respectively.</p>
+
+<h2 id="label-Contributing">Contributing<span><a href="#label-Contributing">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ol><li>
+<p>Fork it ( <a
+href="https://github.com/mudafar/activerecord_activity_tracker/fork">github.com/mudafar/activerecord_activity_tracker/fork</a>
+)</p>
+</li><li>
+<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
+</li><li>
+<p>Commit your changes (<code>git commit -am &#39;Add some
+feature&#39;</code>)</p>
+</li><li>
+<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
+</li><li>
+<p>Create a new Pull Request</p>
+</li></ol>
+
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The gem is available as open source under the terms of the <a
+href="http://opensource.org/licenses/MIT">MIT License</a>.</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

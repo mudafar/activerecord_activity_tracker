@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trackable: one
+  trackable_type: Trackable
+  owner: one
+  owner_type: Owner
+  key: MyString
+  data: MyString
+
+two:
+  trackable: two
+  trackable_type: Trackable
+  owner: two
+  owner_type: Owner
+  key: MyString
+  data: MyString
