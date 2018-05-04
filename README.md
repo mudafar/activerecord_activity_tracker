@@ -181,7 +181,7 @@ $ rails db:migrate
 
 
 
-### Documentation / API
+## Documentation / API
 #### ActiverecordActivityTracker::ActsAsTrackable
 - `acts_as_trackable(tracked = [:create, :update]) => nil`
     Overview:
