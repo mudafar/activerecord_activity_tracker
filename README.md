@@ -230,21 +230,21 @@ $ rails db:migrate
 
 
 #### ArActivityTracker 
-##### Description
-Activity model, to handle trackable and owner relations.
+- ##### Description
+    Activity model, to handle trackable and owner relations.
 
-##### Data structure
-`    t.string "trackable_type"
+- ##### Data structure
+    `    t.string "trackable_type"
      t.integer "trackable_id"
      t.string "owner_type"
      t.integer "owner_id"
      t.string "key"
      t.string "data"
 `
-##### Key default format
-MODEL_NAME.ACTIVITY_TYPE
+- ##### Key default format
+    MODEL_NAME.ACTIVITY_TYPE
 
-**For example:**
+    **For example:**
 Given a `tracked` comment model `Comment`, then the keys (by default) will be:
 `comment.create` and `comment.update` for creation and modification activities respectively. 
 
