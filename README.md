@@ -249,7 +249,8 @@ Given a `tracked` comment model `Comment`, then the keys (by default) will be:
 `comment.create` and `comment.update` for creation and modification activities respectively. 
 
 
-
+For more details see:
+[rubydoc](https://www.rubydoc.info/gems/activerecord_activity_tracker)
 
 
 
