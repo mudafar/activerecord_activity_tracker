@@ -46,7 +46,7 @@ This gem will allows you to create the data model for social **news feed** used 
 - To get the owner use `get_owner`
 - To clear owner use `clear_owner`
 
-`Note:` setting the owner is required, as each activity must have an owner, see [set default owner example](#set-default-owner-to-devise-current_user)
+`Note:` setting the owner is required, as each activity must have an owner, see [set default owner example](#set-default-owner-to-devise-current_user).
  
 
 ### Access model's tracked activities
@@ -216,7 +216,7 @@ $ rails db:migrate
     
 #### ActiverecordActivityTracker::Owner
 - `get_owner() => owner (active_record_model or nil)`
-    Overview: Get the current owner
+    Overview: Get the current owner.
 
 - `set_owner(owner) => nil`
     Overview: Set the current owner.
@@ -259,11 +259,12 @@ Given a `tracked` comment model `Comment`, then the keys (by default) will be:
 
 ## Contributing
 
-1. Fork it ( https://github.com/mudafar/activerecord_activity_tracker/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+1. Fork it ( https://github.com/mudafar/activerecord_activity_tracker/fork ).
+2. Create your feature branch (`git checkout -b my-new-feature`).
+3. Test your changes to ensure they pass all tests (`bin/test`) .
+4. Commit your changes (`git commit -am 'Add some feature'`).
+5. Push to the branch (`git push origin my-new-feature`).
+6. Create a new Pull Request
 
 
 ## License
